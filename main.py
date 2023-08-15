@@ -1,16 +1,16 @@
-# This is a sample Python script.
+import streamlit as st
+from langchain.agents import initialize_agent, load_tools
+from langchain.llms import OpenAI
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+st.title("Ask any question!")
+prompt = st.text_input("Got any questions for me?")
 
+llm = OpenAI(temperature=0.6)
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+tool_names = ["serpapi"]
+tools = load_tools(tool_names)
+agent = initialize_agent(tools, llm, agent="zero-shot-react-description", verbose=True)
 
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+if prompt:
+    response = agent.run(prompt)
+    st.write(response)
