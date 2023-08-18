@@ -13,8 +13,6 @@ SerpAPI is leveraged to allow ChatGPT to access updated internet information aft
 
 # Prerequisites
 * Python 3.6 or above
-* Poetry 
-* Streamlit
 * OpenAI API Key
 * SerpAPI Api Key
 
@@ -34,11 +32,16 @@ Install Dependencies:
   `poetry install`
 
 # Export API Keys
-In the terminal, use the `export` command to set your OpenAI and SerpAPI api keys as environment variables:
-  `export OpenAI_API_KEY=YOUR_API_KEY_HERE`
-  
-  `export SERPAPI_API_KEY=YOUR_API_KEY_HERE`
+In the terminal, run the bash script: 
+  `bash set_keys.sh` 
 
-Run Script:
-  
-  `poetry run python3 main.py`
+The `set_keys.sh` script will prompt you for your API keys (OpenAI & SerpAPI). 
+
+The script then adds them to the `.env` file in the project directory. 
+
+This way, you can avoid manually exporting the environment variables each time.
+
+# Usage 
+After the Export API Keys step is complete, you can run the `main.py` script: 
+  `streamlit run main.py' 
+
