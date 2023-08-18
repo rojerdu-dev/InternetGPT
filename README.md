@@ -33,6 +33,7 @@ Install Dependencies:
 
 # Export API Keys
 In the terminal, run the bash script: 
+  
   `bash set_keys.sh` 
 
 The `set_keys.sh` script will prompt you for your API keys (OpenAI & SerpAPI). 
@@ -43,5 +44,6 @@ This way, you can avoid manually exporting the environment variables each time.
 
 # Usage 
 After the Export API Keys step is complete, you can run the `main.py` script: 
-  `streamlit run main.py' 
+  
+  `streamlit run main.py` 
 
