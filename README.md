@@ -19,7 +19,7 @@ SerpAPI is leveraged to allow ChatGPT to access updated internet information aft
 # Installation
 Install Poetry:
 
-`curl -sSL https://install.python-poetry.org | python3 -` 
+`pip3 install poetry` 
 
 Clone the repository:
   
